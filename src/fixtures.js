@@ -1,11 +1,11 @@
 export default function getFixtures() {
-    return {
-        'Quarterfinal 1': {},
-        'Quarterfinal 2': {},
-        'Quarterfinal 3': {},
-        'Quarterfinal 4': {},
-        'Semifinal 1': {},
-        'Semifinal 2': {},
-        'Final': {}
-    }
+    return [
+        { round: 'Quarterfinal 1', teams: [] },
+        { round: 'Quarterfinal 2', teams: [] },
+        { round: 'Quarterfinal 3', teams: [] },
+        { round: 'Quarterfinal 3', teams: [] },
+        { round: 'Semifinal 1', teams: [] },
+        { round: 'Semifinal 2', teams: [] },
+        { round: 'Final', teams: [] }
+    ];
 }

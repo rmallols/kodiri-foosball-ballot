@@ -14,8 +14,8 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.setState({ 
-      teams: getTeams() 
+    this.setState({
+      teams: getTeams()
     });
   }
 
@@ -23,8 +23,14 @@ class App extends Component {
     let { teams, fixtures } = this.state;
     return (
       <div className="App">
-        <div>Teams: {teams.map(team => team.country).join(', ')}</div>
-        <div>Fixtures: {Object.keys(fixtures).join(', ')}</div>
+        <div>
+          Teams:
+          {teams.map(team => team.country).join(', ')}
+        </div>
+        <div>
+          Fixtures:
+          {fixtures.map(fixture => fixture.round).join(', ')}
+        </div>
       </div>
     );
   }
