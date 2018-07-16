@@ -1,24 +1,30 @@
 import React, { Component } from 'react';
 import './App.css';
 import getTeams from './teams';
+import getFixtures from './fixtures';
 
 class App extends Component {
 
   constructor() {
     super();
     this.state = {
-      teams: []
+      teams: getTeams(),
+      fixtures: getFixtures()
     }
   }
 
   componentDidMount() {
-    this.setState({ teams: getTeams() });
+    this.setState({ 
+      teams: getTeams() 
+    });
   }
 
   render() {
+    let { teams, fixtures } = this.state;
     return (
       <div className="App">
-        Number of teams: {this.state.teams.length}
+        <div>Teams: {teams.map(team => team.country).join(', ')}</div>
+        <div>Fixtures: {Object.keys(fixtures).join(', ')}</div>
       </div>
     );
   }
